@@ -21,16 +21,15 @@
   background-color: #04AA6D;
   color: white;
 }
-button {
-    background-color: #04AA6D; /* Green */
-    border: none;
+a:link, a:visited {
+    background-color: #04AA6D;
     color: white;
-    padding: 16px 32px;
+    padding: 14px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
+  }
+  
+  a:hover, a:active {
+    background-color: #0bfda4;
   }
