@@ -6,6 +6,7 @@
 <body>
 
 <h1>A Fancy Table</h1>
+<a href='create.html'>Ajouter Article</a>
 <form action="welcome.php" method="post"></form>
 <table id="customers">
   <tr>
@@ -35,7 +36,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // Output data of each row
     while($row = $result->fetch_assoc()) {
-      echo "<tr> <td>". $row["code"]. "</td> <td> ". $row["name"]. " </td><td> ".$row["quantity"] . "</td><td>".$row["price"]. "</td><td><a href='update.php?code=".$row["code"] ."'>editer</a><button >delete</button></td></tr>";
+      echo "<tr> <td>". $row["code"]. "</td> <td> ". $row["name"]. " </td><td> ".$row["quantity"] . "</td><td>".$row["price"]. "</td><td><a href='update.php?code=".$row["code"] ."'>editer</a><a style='background-color: red' href='delete.php?code=".$row["code"] ."'>delelte</td></tr>";
     }
 } else {
     echo "0 results";

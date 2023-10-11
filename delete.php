@@ -54,28 +54,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT code,name, quantity, price FROM article WHERE code=".$_REQUEST['code'];
+$sql = "DELETE FROM `article` WHERE code=".$_REQUEST['code'];
 $result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    
-    $row = $result->fetch_assoc();
-    echo "<label for='fname'>code</label>";
-    echo "<input type='text'  name='code' value='".$_REQUEST["code"]."' >";
-    
-    echo "<label for='fname'>Name</label>";
-    echo "<input type='text'  name='name' value='".$row["name"]."' >";
-
-    echo "<label for='fname'>Quantity</label>";
-    echo "<input type='text'  name='quantity' value='".$row["quantity"]."' >";
-
-    echo "<label for='fname'>Price</label>";
-    echo "<input type='text'  name='price' value='".$row["price"]."' >";
-
-} else {
-    echo "0 results";
-}
+header("Location: index.php");
 
 $conn->close();
 
