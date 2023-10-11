@@ -35,7 +35,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // Output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr> <td>: ". $row["code"]. "</td>-<td> name".$row["quantity"]. "</td> -<td> Quantity: ". $row["quantity"]. "</td> -<td> Price: " . $row["price"]. "</td> -<td><a href='update.php?code' target='_blank'>This is a link</a><a href="" target="_blank">This is a link</a></td></tr>";
+      echo "<tr> <td>". $row["code"]. "</td> <td> ". $row["name"]. " </td><td> ".$row["quantity"] . "</td><td>".$row["price"]. "</td><td><a href='update.php?code=".$row["code"] ."'>editer</a><button >delete</button></td></tr>";
     }
 } else {
     echo "0 results";
